@@ -25,31 +25,31 @@ public class FortuneCookie implements ISurprise {
     };
 
     private String message;
+    private static final Random randomGenerator = new Random(quotes.length);
 
     public FortuneCookie(String message){
         this.message = message;
     }
 
-
-
     @Override
     public void enjoy(){
         System.out.format("You got a fortune cookie!\n" +
-                "\"%s\"" , this.generate().message);
+                "\"%s\"\n" , this.message);
     }
 
     @Override
     public String toString(){
-        return String.format("[FortuneCookie] message = %s", this.message);
+        return String.format("[FortuneCookie] message = %s\n", this.message);
     }
 
     public static FortuneCookie generate(){
-        Random random = new Random();
-        return new FortuneCookie(quotes[random.nextInt(quotes.length)]);
+        return new FortuneCookie(FortuneCookie.quotes[FortuneCookie.randomGenerator.nextInt(FortuneCookie.quotes.length)]);
     }
     public static void main(String[] args){
-        FortuneCookie f1 = new FortuneCookie("blabla");
-        System.out.println(f1);
+        FortuneCookie f1 = FortuneCookie.generate();
         f1.enjoy();
+
+        FortuneCookie f2 = FortuneCookie.generate();
+        f2.enjoy();
     }
 }
