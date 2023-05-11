@@ -33,13 +33,13 @@ public class FortuneCookie implements ISurprise {
 
     @Override
     public void enjoy(){
-        System.out.format("You got a fortune cookie!\n" +
-                "\"%s\"\n" , this.message);
+        System.out.println("You got a fortune cookie!");
+        System.out.println("\""+ this.message + "\"");
     }
 
     @Override
     public String toString(){
-        return String.format("[FortuneCookie] message = %s\n", this.message);
+        return "[FortuneCookie] message = " + this.message;
     }
 
     public static FortuneCookie generate(){

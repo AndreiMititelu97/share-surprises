@@ -16,12 +16,12 @@ public class Candies implements ISurprise{
 
     @Override
     public void enjoy() {
-        System.out.format("You received %d %s candies\n", this.num, this.type);
+        System.out.println("You received " + this.num + " " + this.type + " candies.");
     }
 
     @Override
     public String toString() {
-        return String.format("[Candies] number = %d, type = %s\n", this.num, this.type);
+        return "[Candies] number = " + this.num + ", type = " + this.type;
     }
 
     public static Candies generate() {

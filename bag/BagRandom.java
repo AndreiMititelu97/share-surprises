@@ -59,8 +59,8 @@ public class BagRandom implements IBag {
         bag.put(s3);
         bag.put(s4);
 
-        System.out.println(bag.isEmpty());
-        System.out.println(bag.size());
+//        System.out.println(bag.isEmpty());
+//        System.out.println(bag.size());
         System.out.println(bag);
 
         bag.takeOut();

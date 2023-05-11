@@ -13,12 +13,12 @@ public class MinionToy implements ISurprise{
 
     @Override
     public void enjoy() {
-        System.out.format("You got a minion named %s!\n", this.name);
+        System.out.println("You got a minion named " + this.name + "!");
     }
 
     @Override
     public String toString() {
-        return String.format("[Minion] name = %s\n", this.name);
+        return "[Minion] name = " + this.name;
     }
 
     public static MinionToy generate() {
