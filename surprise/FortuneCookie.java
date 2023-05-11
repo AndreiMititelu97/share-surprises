@@ -25,7 +25,7 @@ public class FortuneCookie implements ISurprise {
     };
 
     private String message;
-    private static final Random randomGenerator = new Random(quotes.length);
+    private static final Random randomGenerator = new Random(FortuneCookie.quotes.length);
 
     public FortuneCookie(String message){
         this.message = message;
