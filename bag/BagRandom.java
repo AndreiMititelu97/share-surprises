@@ -39,22 +39,33 @@ public class BagRandom implements IBag {
         return this.surprises.size();
     }
 
+    @Override
+    public String toString(){
+        return this.surprises.toString();
+    }
+
     public static void main(String[] args){
-        BagRandom bag = new BagRandom();
+        IBag bag = new BagRandom();
+
         ISurprise s1 = FortuneCookie.generate();
+        ISurprise s2 = FortuneCookie.generate();
+        ISurprise s3 = FortuneCookie.generate();
+        ISurprise s4 = FortuneCookie.generate();
+
+        System.out.println(bag);
+
+        bag.put(s1);
+        bag.put(s2);
+        bag.put(s3);
+        bag.put(s4);
 
         System.out.println(bag.isEmpty());
         System.out.println(bag.size());
-        bag.put(s1);
-        bag.put(s1);
-
-        System.out.println(bag.isEmpty());
-        System.out.println(bag.size());
+        System.out.println(bag);
 
         bag.takeOut();
-        bag.takeOut();
+        System.out.println(bag);
 
-        System.out.println(bag.isEmpty());
-        System.out.println(bag.size());
+
     }
 }
