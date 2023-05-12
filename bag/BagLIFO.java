@@ -1,6 +1,5 @@
 package bag;
-import surprise.FortuneCookie;
-import surprise.ISurprise;
+import surprise.*;
 import java.util.ArrayList;
 
 public class BagLIFO implements IBag{
@@ -17,7 +16,7 @@ public class BagLIFO implements IBag{
 
     @Override
     public void put(IBag bagOfSurprises) {
-        for(int i = 0; i < bagOfSurprises.size(); i++){
+        while(!bagOfSurprises.isEmpty()){
             this.put(bagOfSurprises.takeOut());
         }
     }
@@ -44,26 +43,26 @@ public class BagLIFO implements IBag{
 
     public static void main(String[] args){
         IBag bag = new BagLIFO();
+        IBag bag2 = new BagLIFO();
 
-        ISurprise s1 = FortuneCookie.generate();
+        ISurprise s1 = Candies.generate();
         ISurprise s2 = FortuneCookie.generate();
-        ISurprise s3 = FortuneCookie.generate();
+        ISurprise s3 = MinionToy.generate();
         ISurprise s4 = FortuneCookie.generate();
-
-        System.out.println(bag);
 
         bag.put(s1);
         bag.put(s2);
         bag.put(s3);
         bag.put(s4);
 
+        bag2.put(bag);
+        System.out.println(bag);
+        System.out.println(bag2);
         System.out.println(bag.isEmpty());
         System.out.println(bag.size());
-        System.out.println(bag);
 
-        bag.takeOut();
-        bag.takeOut();
-        System.out.println(bag);
+
+
 
 
     }

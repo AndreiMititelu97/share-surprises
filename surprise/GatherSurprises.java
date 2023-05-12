@@ -9,8 +9,7 @@ import java.util.Random;
 public final class GatherSurprises {
     private static int typeOfSurprises = 3;
 
-    private GatherSurprises() {
-    }
+    private GatherSurprises() {}
 
     public static ISurprise[] gather(int n) {
         ISurprise[] arrayOfSurprises = new ISurprise[n];

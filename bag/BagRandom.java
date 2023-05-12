@@ -2,7 +2,6 @@ package bag;
 import surprise.ISurprise;
 import java.util.ArrayList;
 import java.util.Random;
-
 import surprise.FortuneCookie;
 public class BagRandom implements IBag {
     private ArrayList<ISurprise> surprises;
@@ -18,7 +17,7 @@ public class BagRandom implements IBag {
 
     @Override
     public void put(IBag bagOfSurprises) {
-        for(int i = 0; i < bagOfSurprises.size(); i++){
+        while(!bagOfSurprises.isEmpty()){
             this.put(bagOfSurprises.takeOut());
         }
     }

@@ -3,8 +3,10 @@ package bag;
 public class BagFactory implements IBagFactory{
     private BagFactory() {}
 
+    private static final BagFactory factory = new BagFactory();
+
     public static BagFactory getInstance() {
-        return new BagFactory();
+        return factory;
     }
 
     @Override
@@ -18,10 +20,8 @@ public class BagFactory implements IBagFactory{
        }
     }
     public static void main(String[] args){
-        BagFactory a = new BagFactory();
-        a.makeBag("RANDOM");
+        IBag a = BagFactory.getInstance().makeBag("LIFO");
         System.out.println(a);
 
-        System.out.println(BagFactory.getInstance().makeBag("RANDOM"));
     }
 }

@@ -10,6 +10,6 @@ public class GiveSurpriseAndHug extends AbstractGiveSurprises {
     }
     @Override
     public void giveWithPassion(){
-        System.out.println("Singing a nice song, full of joy and genuine excitement...");
+        System.out.println("Warm wishes and a big hug!");
     }
 }

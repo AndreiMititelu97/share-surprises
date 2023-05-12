@@ -17,7 +17,7 @@ public class BagFIFO implements IBag{
 
     @Override
     public void put(IBag bagOfSurprises) {
-        for(int i = 0; i < bagOfSurprises.size(); i++){
+        while(!bagOfSurprises.isEmpty()){
             this.put(bagOfSurprises.takeOut());
         }
     }

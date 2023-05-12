@@ -22,21 +22,28 @@ public abstract class AbstractGiveSurprises {
     }
 
     public void give(){
+        if(this.isEmpty()){
+            return;
+        }
+
         ISurprise gift = myBag.takeOut();
+        gift.enjoy();
         giveWithPassion();
     }
 
     public void giveAll(){
         for(int i = 0; i < myBag.size(); i++){
-            ISurprise gift = myBag.takeOut();
-            giveWithPassion();
+            while(!this.isEmpty()){
+                ISurprise gift = myBag.takeOut();
+                gift.enjoy();
+                giveWithPassion();
 
-            // Sleep for X seconds - code snippet
-            try {
-                TimeUnit.SECONDS.sleep(this.waitTime); // number of seconds to sleep
-            } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
+                // Sleep for X seconds - code snippet
+                try {
+                    TimeUnit.SECONDS.sleep(this.waitTime); // number of seconds to sleep
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
@@ -46,6 +53,5 @@ public abstract class AbstractGiveSurprises {
     }
 
     protected abstract void giveWithPassion();
-
 }
 
